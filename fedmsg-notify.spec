@@ -1,18 +1,18 @@
 Summary:	Fedmsg Desktop Notifications
 Name:		fedmsg-notify
-Version:	0.5.4
+Version:	0.5.5
 Release:	0.1
 License:	GPL v3+
 Group:		X11/Applications/Networking
 Source0:	https://github.com/fedora-infra/fedmsg-notify/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	9442a366874eea126fd17e57d2bd9581
+# Source0-md5:	fc6fe17a2c385c99e0165df5b0a7560e
 URL:		https://github.com/fedora-infra/fedmsg-notify
 BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-pygobject3
 BuildRequires:	python-setuptools
 BuildRequires:	rpm-pythonprov
-Requires:	fedmsg > 0.5.5
+Requires:	fedmsg >= 0.5.5
 Requires:	glib2 >= 1:2.26.0
 #Requires:	python-fedmsg-meta-fedora-infrastructure
 #Requires:	python-fedora
@@ -96,6 +96,6 @@ fi
 %{py_sitescriptdir}/fedmsg_notify/*.py[co]
 %dir %{py_sitescriptdir}/fedmsg_notify/distro_specific
 %{py_sitescriptdir}/fedmsg_notify/distro_specific/__init__.py[co]
-%{py_sitescriptdir}/fedmsg_notify/distro_specific/debian.py[co]
-%{py_sitescriptdir}/fedmsg_notify/distro_specific/fedora.py[co]
+%{py_sitescriptdir}/fedmsg_notify/distro_specific/_debian.py[co]
+%{py_sitescriptdir}/fedmsg_notify/distro_specific/_fedora.py[co]
 %{py_sitescriptdir}/fedmsg_notify-%{version}-py*.egg-info
