@@ -1,0 +1,14 @@
+--- fedmsg-notify-0.5.5/fedmsg_notify/distro_specific/__init__.py~	2014-12-17 20:56:07.000000000 +0200
++++ fedmsg-notify-0.5.5/fedmsg_notify/distro_specific/__init__.py	2015-11-11 21:48:02.038752091 +0200
+@@ -32,6 +32,11 @@
+     pass
+ 
+ try:
++    from ._pld import *
++except ImportError:
++    pass
++
++try:
+     get_installed_packages
+ except NameError:
+     log.warn("Could not import distro-specific packages. Stubbing out the package management functions.")
