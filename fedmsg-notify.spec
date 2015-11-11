@@ -1,7 +1,7 @@
 Summary:	Fedmsg Desktop Notifications
 Name:		fedmsg-notify
 Version:	0.5.5
-Release:	0.3
+Release:	0.4
 License:	GPL v3+
 Group:		X11/Applications/Networking
 Source0:	https://github.com/fedora-infra/fedmsg-notify/archive/%{version}/%{name}-%{version}.tar.gz
@@ -68,11 +68,6 @@ desktop-file-install \
     --dir=$RPM_BUILD_ROOT%{_desktopdir} \
     conf/%{name}-daemon.desktop
 
-# Autostart the daemon
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart
-cp -p $RPM_BUILD_ROOT%{_desktopdir}/%{name}-daemon.desktop \
-    $RPM_BUILD_ROOT%{_sysconfdir}/xdg/autostart/
-
 # GSettings schema
 install -d $RPM_BUILD_ROOT%{_datadir}/glib-2.0/schemas
 cp -p conf/%{busname}.gschema.xml $RPM_BUILD_ROOT%{_datadir}/glib-2.0/schemas
@@ -91,7 +86,6 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc README.md LICENSE
-/etc/xdg/autostart/%{name}-daemon.desktop
 /etc/dbus-1/system.d/%{busname}.conf
 %attr(755,root,root) %{_bindir}/%{name}-daemon
 %attr(755,root,root) %{_bindir}/%{name}-config
