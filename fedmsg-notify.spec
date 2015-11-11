@@ -1,11 +1,12 @@
 Summary:	Fedmsg Desktop Notifications
 Name:		fedmsg-notify
 Version:	0.5.5
-Release:	0.2
+Release:	0.3
 License:	GPL v3+
 Group:		X11/Applications/Networking
 Source0:	https://github.com/fedora-infra/fedmsg-notify/archive/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	fc6fe17a2c385c99e0165df5b0a7560e
+Source1:	_pld.py
 Patch0:		pld.patch
 URL:		https://github.com/fedora-infra/fedmsg-notify
 BuildRequires:	desktop-file-utils
@@ -35,7 +36,7 @@ to enable/disable the service.
 %patch0 -p1
 
 # install pld
-touch fedmsg_notify/distro_specific/_pld.py
+cp -p %{SOURCE1} fedmsg_notify/distro_specific
 # skip fedora and debian
 mv fedmsg_notify/distro_specific/_debian.py .
 mv fedmsg_notify/distro_specific/_fedora.py .
