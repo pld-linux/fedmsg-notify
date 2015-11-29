@@ -9,6 +9,7 @@ Source0:	https://github.com/fedora-infra/fedmsg-notify/archive/%{version}/%{name
 Source1:	_pld.py
 Patch0:		pld.patch
 URL:		https://github.com/fedora-infra/fedmsg-notify
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	desktop-file-utils
 BuildRequires:	python-devel
 BuildRequires:	python-pygobject3
