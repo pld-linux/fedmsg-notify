@@ -34,7 +34,7 @@ to enable/disable the service.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 # install pld
 cp -p %{SOURCE1} fedmsg_notify/distro_specific
